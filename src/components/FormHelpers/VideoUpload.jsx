@@ -20,7 +20,7 @@ const VideoUpload = ({ onChange, value, label }) => {
 		<div className="form-group">
 			<label className="form-label fw-semibold">{label}</label>
 			<CldUploadWidget
-				onUpload={handleUpload}
+				onSuccess={handleUpload}
 				uploadPreset={uploadPreset}
 				options={{ maxFiles: 1 }}
 				showPoweredBy={false}
