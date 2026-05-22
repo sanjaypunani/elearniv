@@ -56,9 +56,9 @@ const Navbar = ({
 						<div className="navbar navbar-expand-lg navbar-light">
 							<Link className="navbar-brand" href={`/${lang}`}>
 								<Image
-									src="/images/logo.png"
-									width={120}
-									height={40}
+									src="/images/logo_new.png"
+									width={240}
+									height={38}
 									alt="logo"
 								/>
 							</Link>

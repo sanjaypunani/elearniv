@@ -1,4 +1,4 @@
-import { Nunito_Sans } from "next/font/google";
+import { Noto_Sans_Devanagari, Nunito_Sans } from "next/font/google";
 import "../../app/styles/bootstrap.min.css";
 import "../../app/styles/animate.min.css";
 import "../../app/styles/boxicons.min.css";
@@ -25,14 +25,19 @@ const nunito = Nunito_Sans({
 	adjustFontFallback: false,
 });
 
+const notoSansDevanagari = Noto_Sans_Devanagari({
+	subsets: ["devanagari"],
+	display: "swap",
+});
+
 export const metadata = {
 	metadataBase: new URL("https://elearniv-app-routing.envytheme.com"),
 	alternates: {
 		canonical: "/",
 	},
 	title: {
-		template: "%s | eLearniv - React Next.js Learning Management System",
-		default: "eLearniv",
+		template: "%s | Eduup - React Next.js Learning Management System",
+		default: "Eduup",
 	},
 	keywords: [
 		"Online coding courses",
@@ -58,7 +63,7 @@ export const metadata = {
 		},
 	},
 	openGraph: {
-		title: "eLearniv | Unlock Your Potential with Expert-Led Online Courses | Learn Coding, Marketing, and More!",
+		title: "Eduup | Unlock Your Potential with Expert-Led Online Courses | Learn Coding, Marketing, and More!",
 		url: "https://elearniv-app-routing.envytheme.com",
 		images: [
 			"https://res.cloudinary.com/dev-empty/image/upload/v1707717581/znronmo1rj2gexfrmnmy.jpg",
@@ -72,9 +77,11 @@ export default async function RootLayout({ children, params }) {
 	const { lang } = await params;
 	const dict = await getDictionary(lang);
 	const currentUser = await getCurrentUser();
+	const bodyFontClass =
+		lang === "hi" ? notoSansDevanagari.className : nunito.className;
 	return (
 		<html lang={lang}>
-			<body className={nunito.className} suppressHydrationWarning={true}>
+			<body className={bodyFontClass} suppressHydrationWarning={true}>
 				<TosterProvider />
 				<Navbar currentUser={currentUser} lang={lang} {...dict} />
 				<LanguageSwitcher lang={lang} />

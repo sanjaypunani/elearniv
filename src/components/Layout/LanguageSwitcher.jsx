@@ -2,6 +2,8 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
+const languages = ["en", "ar", "de", "hi"];
+
 const LanguageSwitcher = ({ lang }) => {
 	const pathname = usePathname();
 	const router = useRouter();
@@ -18,24 +20,15 @@ const LanguageSwitcher = ({ lang }) => {
 	}
 	return (
 		<div className="language-switcher">
-			<button
-				className={lang === "en" ? "active" : null}
-				onClick={() => switchLocale("en")}
-			>
-				EN
-			</button>
-			<button
-				className={lang === "ar" ? "active" : null}
-				onClick={() => switchLocale("ar")}
-			>
-				AR
-			</button>
-			<button
-				className={lang === "de" ? "active" : null}
-				onClick={() => switchLocale("de")}
-			>
-				DE
-			</button>
+			{languages.map((locale) => (
+				<button
+					key={locale}
+					className={lang === locale ? "active" : null}
+					onClick={() => switchLocale(locale)}
+				>
+					{locale.toUpperCase()}
+				</button>
+			))}
 		</div>
 	);
 };

@@ -55,7 +55,7 @@ const FaqContent = () => {
 							<AccordionItemHeading>
 								<AccordionItemButton>
 									How do I find a study abroad program on
-									eLearniv.com?
+									Eduup.com?
 								</AccordionItemButton>
 							</AccordionItemHeading>
 							<AccordionItemPanel>

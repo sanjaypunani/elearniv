@@ -2,7 +2,7 @@ import PageBanner from "@/components/Shared/PageBanner";
 import TermsContent from "./TermsContent";
 
 export const metadata = {
-	title: "Terms & Condition | eLearniv - React Next.js Learning Management System",
+	title: "Terms & Condition | Eduup - React Next.js Learning Management System",
 };
 
 const page = async ({ params }) => {
