@@ -120,17 +120,13 @@ const Footer = ({
                   </li>
                   <li>
                     <i className="bx bx-phone-call"></i>
-                    <a href="tel:+44587154756">+1 (123) 456 7890</a>
+                    <a href="tel:++919758003800">+91 9758003800</a>
                   </li>
                   <li>
                     <i className="bx bx-envelope"></i>
                     <a href="mailto:edu@deeprabmedua.com">
                       edu@deeprabmedua.com
                     </a>
-                  </li>
-                  <li>
-                    <i className="bx bxs-inbox"></i>
-                    <a href="tel:+557854578964">+91 9758003800</a>
                   </li>
                 </ul>
               </div>

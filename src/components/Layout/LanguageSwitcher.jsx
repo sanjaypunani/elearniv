@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const languages = ["en", "ar", "de", "hi"];
+const languages = ["en", "hi"];
 
 const LanguageSwitcher = ({ lang }) => {
 	const pathname = usePathname();
