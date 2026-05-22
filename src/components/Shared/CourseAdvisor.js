@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import baseUrl from "@/utils/baseUrl";
 
 const CourseAdvisor = () => {
 	return (
@@ -44,7 +45,7 @@ const CourseAdvisor = () => {
 									<ul className="social-link">
 										<li>
 											<a
-												href="https://www.facebook.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -54,7 +55,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.twitter.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -64,7 +65,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.instagram.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -74,7 +75,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.linkedin.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -111,7 +112,7 @@ const CourseAdvisor = () => {
 									<ul className="social-link">
 										<li>
 											<a
-												href="https://www.facebook.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -121,7 +122,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.twitter.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -131,7 +132,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.instagram.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -141,7 +142,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.linkedin.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -178,7 +179,7 @@ const CourseAdvisor = () => {
 									<ul className="social-link">
 										<li>
 											<a
-												href="https://www.facebook.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -188,7 +189,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.twitter.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -198,7 +199,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.instagram.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"
@@ -208,7 +209,7 @@ const CourseAdvisor = () => {
 										</li>
 										<li>
 											<a
-												href="https://www.linkedin.com/"
+												href={baseUrl}
 												className="d-block"
 												target="_blank"
 												rel="noreferrer"

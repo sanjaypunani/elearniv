@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import baseUrl from "@/utils/baseUrl";
 
 const SocialShareBtns = () => {
 	const { slug } = useParams();
-	// const { slug } = router.query;
+	const courseUrl = `${baseUrl}/${slug}`;
 	return (
 		<div className="courses-share">
 			<div className="share-info">
@@ -17,36 +17,40 @@ const SocialShareBtns = () => {
 				<ul className="social-link">
 					<li>
 						<a
-							href={`https://facebook.com/sharer/sharer.php?u=${baseUrl}/${slug}`}
+							href={courseUrl}
 							className="d-block"
 							target="_blank"
+							rel="noreferrer"
 						>
 							<i className="bx bxl-facebook"></i>
 						</a>
 					</li>
 					<li>
 						<a
-							href={`https://twitter.com/intent/tweet?url=${baseUrl}/${slug}`}
+							href={courseUrl}
 							className="d-block"
 							target="_blank"
+							rel="noreferrer"
 						>
 							<i className="bx bxl-twitter"></i>
 						</a>
 					</li>
 					<li>
 						<a
-							href={`https://pinterest.com/pin/create/button/?url=${baseUrl}/${slug}`}
+							href={courseUrl}
 							className="d-block"
 							target="_blank"
+							rel="noreferrer"
 						>
 							<i className="bx bxl-pinterest"></i>
 						</a>
 					</li>
 					<li>
 						<a
-							href={`https://www.linkedin.com/shareArticle?mini=true&url=${baseUrl}/${slug}`}
+							href={courseUrl}
 							className="d-block"
 							target="_blank"
+							rel="noreferrer"
 						>
 							<i className="bx bxl-linkedin"></i>
 						</a>

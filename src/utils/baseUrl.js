@@ -1,7 +1,3 @@
-// Update your baseUrl here
-const baseUrl =
-	process.env.NODE_ENV === "production"
-		? "https://elearniv-app-routing.envytheme.com"
-		: "http://localhost:3000";
+const baseUrl = "https://eduup.inqtube.com";
 
 export default baseUrl;

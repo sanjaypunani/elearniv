@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import baseUrl from "@/utils/baseUrl";
 import {
 	Accordion,
 	AccordionItem,
@@ -24,7 +25,7 @@ const FaqContent = () => {
 							<AccordionItemPanel>
 								<p>
 									You can contact a school by filling out a{" "}
-									<a href="contact.html">“Contact Us”</a>{" "}
+									<a href={baseUrl}>“Contact Us”</a>{" "}
 									form. This form can be found to the right of
 									both the institute and education program
 									profiles and also at the bottom of these
@@ -42,7 +43,7 @@ const FaqContent = () => {
 							<AccordionItemPanel>
 								<p>
 									You can contact a school by filling out a{" "}
-									<a href="contact.html">“Contact Us”</a>{" "}
+									<a href={baseUrl}>“Contact Us”</a>{" "}
 									form. This form can be found to the right of
 									both the institute and education program
 									profiles and also at the bottom of these
@@ -55,13 +56,13 @@ const FaqContent = () => {
 							<AccordionItemHeading>
 								<AccordionItemButton>
 									How do I find a study abroad program on
-									Eduup.com?
+									Eduup?
 								</AccordionItemButton>
 							</AccordionItemHeading>
 							<AccordionItemPanel>
 								<p>
 									You can contact a school by filling out a{" "}
-									<a href="contact.html">“Contact Us”</a>{" "}
+									<a href={baseUrl}>“Contact Us”</a>{" "}
 									form. This form can be found to the right of
 									both the institute and education program
 									profiles and also at the bottom of these
@@ -80,7 +81,7 @@ const FaqContent = () => {
 							<AccordionItemPanel>
 								<p>
 									You can contact a school by filling out a{" "}
-									<a href="contact.html">“Contact Us”</a>{" "}
+									<a href={baseUrl}>“Contact Us”</a>{" "}
 									form. This form can be found to the right of
 									both the institute and education program
 									profiles and also at the bottom of these
@@ -98,7 +99,7 @@ const FaqContent = () => {
 							<AccordionItemPanel>
 								<p>
 									You can contact a school by filling out a{" "}
-									<a href="contact.html">“Contact Us”</a>{" "}
+									<a href={baseUrl}>“Contact Us”</a>{" "}
 									form. This form can be found to the right of
 									both the institute and education program
 									profiles and also at the bottom of these

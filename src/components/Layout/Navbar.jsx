@@ -6,7 +6,6 @@ import Link from "next/link";
 import ProfileDropdown from "./ProfileDropdown";
 // import Cart from "./Cart";
 import SearchForm from "./SearchForm";
-import Image from "next/image";
 import Cart from "./Cart";
 
 const Navbar = ({
@@ -55,12 +54,16 @@ const Navbar = ({
 					<div className="container-fluid">
 						<div className="navbar navbar-expand-lg navbar-light">
 							<Link className="navbar-brand" href={`/${lang}`}>
-								<Image
-									src="/images/logo_new.png"
-									width={240}
-									height={38}
-									alt="logo"
-								/>
+								<span
+									style={{
+										color: "#221638",
+										fontSize: "2rem",
+										fontWeight: 800,
+										letterSpacing: "-0.04em",
+									}}
+								>
+									Eduup
+								</span>
 							</Link>
 
 							<button

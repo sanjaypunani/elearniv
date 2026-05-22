@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import baseUrl from "@/utils/baseUrl";
 
 const ContactInfo = () => {
   return (
@@ -27,12 +28,12 @@ const ContactInfo = () => {
               <i className="bx bx-phone-call"></i>
             </div>
             <h3>Contact</h3>
+            <p>Mobile: +91 9758003800</p>
             <p>
-              Mobile: <a href="tel:+44457895789">(+44) - 45789 - 5789</a>
-            </p>
-            <p>
-              Mail:{" "}
-              <a href="mailto:edu@deeprabmedua.com">edu@deeprabmedua.com</a>
+              Website:{" "}
+              <a href={baseUrl} target="_blank" rel="noreferrer">
+                eduup.inqtube.com
+              </a>
             </p>
           </li>
           <li>

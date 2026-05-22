@@ -19,6 +19,8 @@ import LanguageSwitcher from "@/components/Layout/LanguageSwitcher";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import { getDictionary } from "./dictionaries";
 
+const siteUrl = "https://eduup.inqtube.com/";
+
 const nunito = Nunito_Sans({
 	subsets: ["latin"],
 	display: "swap",
@@ -31,7 +33,7 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
 });
 
 export const metadata = {
-	metadataBase: new URL("https://elearniv-app-routing.envytheme.com"),
+	metadataBase: new URL(siteUrl),
 	alternates: {
 		canonical: "/",
 	},
@@ -64,10 +66,8 @@ export const metadata = {
 	},
 	openGraph: {
 		title: "Eduup | Unlock Your Potential with Expert-Led Online Courses | Learn Coding, Marketing, and More!",
-		url: "https://elearniv-app-routing.envytheme.com",
-		images: [
-			"https://res.cloudinary.com/dev-empty/image/upload/v1707717581/znronmo1rj2gexfrmnmy.jpg",
-		],
+		url: siteUrl,
+		images: [siteUrl],
 		locale: "en_US",
 		type: "website",
 	},

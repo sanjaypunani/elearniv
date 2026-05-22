@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import baseUrl from "@/utils/baseUrl";
 
 const Footer = ({
   lang,
@@ -27,12 +27,16 @@ const Footer = ({
             <div className="col-lg-4 col-md-6 col-sm-6">
               <div className="single-footer-widget">
                 <Link href={`/${lang}/`} className="logo">
-                  <Image
-                    src="/images/logo_new.png"
-                    width={240}
-                    height={38}
-                    alt="logo"
-                  />
+                  <span
+                    style={{
+                      color: "#ffffff",
+                      fontSize: "2rem",
+                      fontWeight: 800,
+                      letterSpacing: "-0.04em",
+                    }}
+                  >
+                    Eduup
+                  </span>
                 </Link>
 
                 <p>
@@ -45,7 +49,7 @@ const Footer = ({
                 <ul className="social-link">
                   <li>
                     <a
-                      href="https://www.facebook.com/"
+                      href={baseUrl}
                       className="d-block"
                       target="_blank"
                       rel="noreferrer"
@@ -55,7 +59,7 @@ const Footer = ({
                   </li>
                   <li>
                     <a
-                      href="https://www.twitter.com/"
+                      href={baseUrl}
                       className="d-block"
                       target="_blank"
                       rel="noreferrer"
@@ -65,7 +69,7 @@ const Footer = ({
                   </li>
                   <li>
                     <a
-                      href="https://www.instagram.com/"
+                      href={baseUrl}
                       className="d-block"
                       target="_blank"
                       rel="noreferrer"
@@ -75,7 +79,7 @@ const Footer = ({
                   </li>
                   <li>
                     <a
-                      href="https://www.linkedin.com/"
+                      href={baseUrl}
                       className="d-block"
                       target="_blank"
                       rel="noreferrer"
@@ -120,12 +124,12 @@ const Footer = ({
                   </li>
                   <li>
                     <i className="bx bx-phone-call"></i>
-                    <a href="tel:++919758003800">+91 9758003800</a>
+                    +91 9758003800
                   </li>
                   <li>
-                    <i className="bx bx-envelope"></i>
-                    <a href="mailto:edu@deeprabmedua.com">
-                      edu@deeprabmedua.com
+                    <i className="bx bx-globe"></i>
+                    <a href={baseUrl} target="_blank" rel="noreferrer">
+                      eduup.inqtube.com
                     </a>
                   </li>
                 </ul>
@@ -138,14 +142,7 @@ const Footer = ({
               <div className="col-lg-6 col-md-6">
                 <p>
                   <i className="bx bx-copyright"></i>
-                  {currentYear} Eduup is Proudly Powered by{" "}
-                  <a
-                    target="_blank"
-                    href="https://envytheme.com/"
-                    rel="noreferrer"
-                  >
-                    EnvyTheme
-                  </a>
+                  {currentYear} Eduup. All rights reserved.
                 </p>
               </div>
 
