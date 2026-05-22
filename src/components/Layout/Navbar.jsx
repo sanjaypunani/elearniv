@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import ProfileDropdown from "./ProfileDropdown";
 // import Cart from "./Cart";
 import SearchForm from "./SearchForm";
@@ -54,16 +55,12 @@ const Navbar = ({
 					<div className="container-fluid">
 						<div className="navbar navbar-expand-lg navbar-light">
 							<Link className="navbar-brand" href={`/${lang}`}>
-								<span
-									style={{
-										color: "#221638",
-										fontSize: "2rem",
-										fontWeight: 800,
-										letterSpacing: "-0.04em",
-									}}
-								>
-									Eduup
-								</span>
+								<Image
+									src="/images/logo.png"
+									width={240}
+									height={38}
+									alt="Eduup logo"
+								/>
 							</Link>
 
 							<button

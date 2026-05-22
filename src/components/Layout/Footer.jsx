@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import baseUrl from "@/utils/baseUrl";
 
 const Footer = ({
@@ -25,19 +26,15 @@ const Footer = ({
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-6 col-sm-6">
-              <div className="single-footer-widget">
-                <Link href={`/${lang}/`} className="logo">
-                  <span
-                    style={{
-                      color: "#ffffff",
-                      fontSize: "2rem",
-                      fontWeight: 800,
-                      letterSpacing: "-0.04em",
-                    }}
-                  >
-                    Eduup
-                  </span>
-                </Link>
+	              <div className="single-footer-widget">
+	                <Link href={`/${lang}/`} className="logo">
+	                  <Image
+	                    src="/images/logo.png"
+	                    width={240}
+	                    height={38}
+	                    alt="Eduup logo"
+	                  />
+	                </Link>
 
                 <p>
                   Working to bring significant changes in online-based learning
