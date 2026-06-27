@@ -68,39 +68,6 @@ const FeedbackSliderWithFunFacts = ({
 						</div>
 					</div>
 				</div>
-
-				<div className="shape2">
-					<Image
-						src="/images/shape2.png"
-						width={206}
-						height={258}
-						alt="image"
-					/>
-				</div>
-				<div className="shape3">
-					<Image
-						src="/images/shape3.png"
-						width={150}
-						height={150}
-						alt="image"
-					/>
-				</div>
-				<div className="shape4">
-					<Image
-						src="/images/shape4.png"
-						width={62}
-						height={62}
-						alt="image"
-					/>
-				</div>
-				<div className="shape9">
-					<Image
-						src="/images/shape8.svg"
-						width={22}
-						height={22}
-						alt="image"
-					/>
-				</div>
 			</div>
 		</>
 	);

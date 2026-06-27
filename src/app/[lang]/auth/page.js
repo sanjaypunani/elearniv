@@ -1,40 +1,41 @@
 import PageBanner from "@/components/Shared/PageBanner";
-import LoginForm from "@/components/Auth/LoginForm";
-import RegisterForm from "@/components/Auth/RegisterForm";
+import AuthEntryCards from "@/components/Auth/AuthEntryCards";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import { redirect } from "next/navigation";
+import { getAuthRedirectPath } from "@/utils/authRedirectPath";
 
 export const metadata = {
-	title: "Authentication | Eduup - React Next.js Learning Management System",
+	title: "Choose Login Portal | Eduup",
 };
 
 const page = async ({ params }) => {
 	const { lang } = await params;
 	const currentUser = await getCurrentUser();
 	if (currentUser) {
-		redirect(`/${lang}/`);
+		redirect(`/${lang}/${getAuthRedirectPath(currentUser)}`);
 	}
 	return (
 		<>
 			<PageBanner
-				pageTitle="Authentication"
+				pageTitle="Choose Your Login Portal"
 				homePageUrl="/"
 				homePageText="Home"
-				activePageText="Authentication"
+				activePageText="Login Portal"
 				lang={lang}
 			/>
 
-			<div className="profile-authentication-area ptb-100">
+			<div className="auth-entry-area ptb-100">
 				<div className="container">
-					<div className="row">
-						<div className="col-lg-6 col-md-12">
-							<LoginForm lang={lang} />
-						</div>
-
-						<div className="col-lg-6 col-md-12">
-							<RegisterForm lang={lang} />
-						</div>
+					<div className="section-title">
+						<span className="sub-title">Welcome to Eduup</span>
+						<h2>Select how you want to enter</h2>
+						<p>
+							Students learn, teachers create courses, and admins
+							manage the platform from separate entry experiences.
+						</p>
 					</div>
+
+					<AuthEntryCards lang={lang} />
 				</div>
 			</div>
 		</>

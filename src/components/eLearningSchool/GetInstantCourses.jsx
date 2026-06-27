@@ -37,7 +37,7 @@ const GetInstantCourses = ({
 										</Link>
 									) : (
 										<Link
-											href={`/${lang}/auth`}
+											href={`/${lang}/auth/student`}
 											className="default-btn"
 										>
 											<i className="flaticon-user"></i>{" "}

@@ -5,14 +5,20 @@ import { useForm } from "react-hook-form";
 import Input from "../FormHelpers/Input";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
-const RegisterForm = () => {
+const RegisterForm = ({
+	accountType = "student",
+	title = "Register",
+	subtitle,
+	buttonText = "Register",
+	loginHref,
+}) => {
 	const [isLoading, setIsLoading] = useState(false);
 
 	const {
 		register,
 		handleSubmit,
-		setError,
 		reset,
 		formState: { errors },
 	} = useForm({
@@ -26,8 +32,11 @@ const RegisterForm = () => {
 	const onSubmit = async (data) => {
 		setIsLoading(true);
 		await axios
-			.post("/api/register", data)
-			.then((response) => {
+			.post("/api/register", {
+				...data,
+				accountType,
+			})
+			.then(() => {
 				toast.success("Registration success! Please login.");
 				reset();
 			})
@@ -41,7 +50,8 @@ const RegisterForm = () => {
 
 	return (
 		<div className="register-form">
-			<h2>Register</h2>
+			<h2>{title}</h2>
+			{subtitle && <p className="auth-form-intro">{subtitle}</p>}
 
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Input
@@ -80,8 +90,15 @@ const RegisterForm = () => {
 				</p>
 
 				<button type="submit" disabled={isLoading}>
-					{isLoading ? "Please wait..." : "Register"}
+					{isLoading ? "Please wait..." : buttonText}
 				</button>
+
+				{loginHref && (
+					<p className="auth-switch-text">
+						Already have an account?{" "}
+						<Link href={loginHref}>Login here</Link>
+					</p>
+				)}
 			</form>
 		</div>
 	);

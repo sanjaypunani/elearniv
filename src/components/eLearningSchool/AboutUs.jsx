@@ -57,23 +57,6 @@ const AboutUs = ({
 						</div>
 					</div>
 				</div>
-
-				<div className="shape1">
-					<Image
-						src="/images/shape1.png"
-						width={118}
-						height={59}
-						alt="image"
-					/>
-				</div>
-				<div className="shape4">
-					<Image
-						src="/images/shape4.png"
-						width={62}
-						height={62}
-						alt="image"
-					/>
-				</div>
 			</div>
 		</>
 	);

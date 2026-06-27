@@ -5,7 +5,12 @@ import prisma from "@/libs/prismadb";
 export async function POST(request) {
 	try {
 		const body = await request.json();
-		const { name, email, password } = body;
+		const { name, email, password, accountType = "student" } = body;
+		const normalizedAccountType = ["student", "teacher"].includes(
+			accountType
+		)
+			? accountType
+			: "student";
 
 		if (name == "") {
 			return NextResponse.json(
@@ -48,6 +53,11 @@ export async function POST(request) {
 				name,
 				email,
 				hashedPassword,
+				role:
+					normalizedAccountType === "teacher"
+						? "INSTRUCTOR"
+						: "USER",
+				is_instructor: normalizedAccountType === "teacher",
 			},
 		});
 

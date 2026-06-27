@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const PageBanner = ({
 	pageTitle,
@@ -64,15 +63,6 @@ const PageBanner = ({
 							<li className="active">{activePageText}</li>
 						</motion.ul>
 					</div>
-				</div>
-
-				<div className="shape9">
-					<Image
-						src="/images/shape8.svg"
-						width="22"
-						height="22"
-						alt="image"
-					/>
 				</div>
 			</div>
 		</>

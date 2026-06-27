@@ -16,23 +16,22 @@ export async function POST(request, { params }) {
 			);
 		}
 		const body = await request.json();
-		const { lecture_name, asset_zip } = body;
+		const { lecture_name, asset_zip, asset_type } = body;
 
-		Object.keys(body).forEach((value) => {
-			if (!body[value]) {
-				NextResponse.json(
-					{
-						message: "One or more fileds are empty!",
-					},
-					{ status: 404 }
-				);
-			}
-		});
+		if (!lecture_name || !asset_zip) {
+			return NextResponse.json(
+				{
+					message: "One or more fields are empty!",
+				},
+				{ status: 400 }
+			);
+		}
 
 		await prisma.asset.create({
 			data: {
 				lecture_name,
 				asset_zip,
+				asset_type: asset_type || "DOCUMENT",
 				courseId: parseInt(courseId),
 			},
 		});

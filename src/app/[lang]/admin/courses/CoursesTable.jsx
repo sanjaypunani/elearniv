@@ -37,7 +37,6 @@ const CoursesTable = ({ courses, lang }) => {
 				<thead>
 					<tr>
 						<th scope="col">Title</th>
-						<th scope="col">Price</th>
 						<th scope="col">Category</th>
 						<th scope="col">Instructor</th>
 						<th scope="col">Videos</th>
@@ -60,7 +59,7 @@ const CoursesTable = ({ courses, lang }) => {
 						))
 					) : (
 						<tr>
-							<td colSpan="7" className="text-center py-3">
+							<td colSpan="6" className="text-center py-3">
 								Empty!
 							</td>
 						</tr>

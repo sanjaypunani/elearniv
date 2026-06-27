@@ -25,8 +25,6 @@ const CourseRow = ({
 				<Link href={`/${lang}/course/${slug}`}>{title}</Link>
 			</td>
 
-			<td>${regular_price}</td>
-
 			<td>{category.name}</td>
 
 			<td>{user.name}</td>

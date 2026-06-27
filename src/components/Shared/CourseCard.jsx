@@ -38,14 +38,7 @@ const CourseCard = ({
 
 					<HeartButton currentUser={currentUser} courseId={id} />
 
-					<>
-						{before_price > 0 && (
-							<div className="price shadow discount-price">
-								<del>${before_price}</del>
-							</div>
-						)}
-						<div className="price shadow">${regular_price}</div>
-					</>
+
 				</div>
 
 				<div className="courses-content">

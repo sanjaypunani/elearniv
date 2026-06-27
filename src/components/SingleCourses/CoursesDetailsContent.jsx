@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { stripHtmlAndTruncate } from "@/utils/stripHtmlAndTruncate";
 import dateFormat from "@/utils/dateFormat";
-import BuyCourseBtn from "./BuyCourseBtn";
+import EnrolFreeBtn from "./EnrolFreeBtn";
 import Image from "next/image";
 import CourseOverview from "./Course/CourseOverview";
 import CourseVideo from "./Course/CourseVideo";
@@ -13,20 +13,16 @@ import Requirements from "./Course/Requirements";
 import WhoIsThisCourseFor from "./Course/WhoIsThisCourseFor";
 import InstructorProfile from "./Course/InstructorProfile";
 import CoursesDetailsSidebar from "./CoursesDetailsSidebar";
-import { couponCode } from "@/store/coupon";
-import { calculateDiscount } from "@/utils/calculateDiscount";
 
-const CoursesDetailsContent = ({ currentUser, course, lang }) => {
-	const { discount } = couponCode((state) => state);
-
+const CoursesDetailsContent = ({ currentUser, course, lang, isEnrolled }) => {
 	const {
+		id,
 		slug,
 		image,
 		overview,
 		what_you_will_learn,
 		who_is_this_course_for,
 		requirements,
-		regular_price,
 		updated_at,
 		category,
 		user,
@@ -77,20 +73,11 @@ const CoursesDetailsContent = ({ currentUser, course, lang }) => {
 
 							<div className="col-lg-4 col-md-12">
 								<div className="courses-price">
-									<div className="price">
-										$
-										{discount
-											? calculateDiscount(
-													discount,
-													regular_price
-											  )
-											: regular_price}
-									</div>
-
-									<BuyCourseBtn
-										currentUser={currentUser}
-										{...course}
+									<EnrolFreeBtn
+										courseId={id}
+										slug={slug}
 										lang={lang}
+										isEnrolled={isEnrolled}
 									/>
 								</div>
 							</div>
@@ -138,7 +125,10 @@ const CoursesDetailsContent = ({ currentUser, course, lang }) => {
 						</div>
 
 						<div className="col-lg-4 col-md-12">
-							<CoursesDetailsSidebar {...course} />
+							<CoursesDetailsSidebar
+								{...course}
+								currentUser={currentUser}
+							/>
 						</div>
 					</div>
 				</div>

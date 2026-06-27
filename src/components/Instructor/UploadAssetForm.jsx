@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useForm, Controller } from "react-hook-form";
 import Input from "../FormHelpers/Input";
-import ImageUpload from "../FormHelpers/ImageUpload";
+import FileUpload from "../FormHelpers/FileUpload";
 
 const UploadAssetForm = ({ courseId }) => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -24,13 +24,14 @@ const UploadAssetForm = ({ courseId }) => {
 		defaultValues: {
 			lecture_name: "",
 			asset_zip: "",
+			asset_type: "DOCUMENT",
 		},
 	});
 
 	const onSubmit = async (data) => {
 		setIsLoading(true);
 		if (!data.asset_zip) {
-			toast.error("Please upload zip.");
+			toast.error("Please upload the file.");
 			setIsLoading(false);
 			return;
 		}
@@ -39,7 +40,11 @@ const UploadAssetForm = ({ courseId }) => {
 			.then((response) => {
 				toast.success(response.data.message);
 				router.refresh();
-				reset();
+				reset({
+					lecture_name: "",
+					asset_zip: "",
+					asset_type: data.asset_type, // retain selected type for convenience
+				});
 			})
 			.catch((error) => {
 				toast.error("Something went wrong!");
@@ -50,6 +55,7 @@ const UploadAssetForm = ({ courseId }) => {
 	};
 
 	const asset_zip = watch("asset_zip");
+	const asset_type = watch("asset_type");
 
 	const setCustomValue = (id, value) => {
 		setValue(id, value, {
@@ -62,9 +68,9 @@ const UploadAssetForm = ({ courseId }) => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className="row">
-				<div className="col-md-12">
+				<div className="col-md-6">
 					<Input
-						label="Lecture"
+						label="Material Title / Lecture Name"
 						id="lecture_name"
 						disabled={isLoading}
 						register={register}
@@ -72,18 +78,33 @@ const UploadAssetForm = ({ courseId }) => {
 					/>
 				</div>
 
+				<div className="col-md-6">
+					<div className="form-group">
+						<label className="form-label fw-semibold">Material Type</label>
+						<select
+							className="form-select form-control"
+							disabled={isLoading}
+							{...register("asset_type")}
+						>
+							<option value="DOCUMENT">📄 Document / PDF</option>
+							<option value="BOOK">📖 Book / eBook</option>
+							<option value="VIDEO">🎬 Video Lecture</option>
+						</select>
+					</div>
+				</div>
+
 				<div className="col-md-12">
-					<ImageUpload
+					<FileUpload
 						onChange={(value) => setCustomValue("asset_zip", value)}
 						value={asset_zip}
-						label="Select Asset/File"
+						label={`Upload Course Material (${asset_type})`}
 					/>
 				</div>
 
-				<div className="col-12">
-					<button type="submit" className="default-btn">
+				<div className="col-12 mt-3">
+					<button type="submit" className="default-btn" disabled={isLoading}>
 						<i className="flaticon-right-arrow"></i>
-						Upload Asset <span></span>
+						Upload Material <span></span>
 					</button>
 				</div>
 			</div>

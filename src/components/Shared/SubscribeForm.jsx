@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
 
 const SubscribeForm = ({
 	homepage: {
@@ -43,25 +41,15 @@ const SubscribeForm = ({
 								required
 							/>
 
-							<motion.button
+							<button
 								type="submit"
 								className="default-btn"
-								whileTap={{ scale: 0.5 }}
 							>
 								<i className="flaticon-user"></i> {subscribeNow}{" "}
 								<span></span>
-							</motion.button>
+							</button>
 						</form>
 					</div>
-				</div>
-
-				<div className="shape13" data-speed="0.06" data-revert="true">
-					<Image
-						src="/images/shape12.png"
-						width={103}
-						height={103}
-						alt="image"
-					/>
 				</div>
 			</div>
 		</>

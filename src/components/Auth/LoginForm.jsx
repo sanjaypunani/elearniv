@@ -8,14 +8,26 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Input from "../FormHelpers/Input";
 
-const LoginForm = ({ lang }) => {
+const roleRedirects = {
+	student: "learning/my-courses",
+	teacher: "instructor/courses",
+	admin: "admin",
+};
+
+const LoginForm = ({
+	lang,
+	accountType = "student",
+	title = "Login",
+	subtitle,
+	buttonText = "Log In",
+	compact = false,
+}) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
 
 	const {
 		register,
 		handleSubmit,
-		setError,
 		formState: { errors },
 	} = useForm({
 		defaultValues: {
@@ -34,7 +46,8 @@ const LoginForm = ({ lang }) => {
 
 			if (!callback?.error) {
 				toast.success("Logged in");
-				router.refresh();
+				const redirectPath = roleRedirects[accountType] || "";
+				router.push(`/${lang}/${redirectPath}`);
 			}
 
 			if (callback?.error) {
@@ -44,8 +57,9 @@ const LoginForm = ({ lang }) => {
 	};
 
 	return (
-		<div className="login-form">
-			<h2>Login</h2>
+		<div className={`login-form ${compact ? "auth-card-compact" : ""}`}>
+			<h2>{title}</h2>
+			{subtitle && <p className="auth-form-intro">{subtitle}</p>}
 
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Input
@@ -87,7 +101,7 @@ const LoginForm = ({ lang }) => {
 				</div>
 
 				<button type="submit" disabled={isLoading}>
-					{isLoading ? "Please wait..." : "Log In"}
+					{isLoading ? "Please wait..." : buttonText}
 				</button>
 			</form>
 		</div>

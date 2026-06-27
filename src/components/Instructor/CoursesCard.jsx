@@ -70,16 +70,7 @@ const CoursesCard = ({
 						</ul>
 					</div>
 
-					<>
-						{before_price > 0 && (
-							<div className="price shadow discount-price">
-								<del>${before_price}</del>
-							</div>
-						)}
-						<div className="price shadow">
-							${regular_price > 0 ? regular_price : "Free"}
-						</div>
-					</>
+
 				</div>
 				<div className="courses-content">
 					<div className="course-author d-flex align-items-center">

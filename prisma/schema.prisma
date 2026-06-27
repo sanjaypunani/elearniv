@@ -167,12 +167,13 @@ model Video {
 }
 
 model Asset {
-    id           Int      @id @default(autoincrement())
+    id           Int       @id @default(autoincrement())
     courseId     Int
     lecture_name String
     asset_zip    String
-    created_at   DateTime @default(now())
-    updated_at   DateTime @updatedAt
+    asset_type   AssetType @default(DOCUMENT)
+    created_at   DateTime  @default(now())
+    updated_at   DateTime  @updatedAt
 
     course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
@@ -285,4 +286,10 @@ enum EARNINGSTATUS {
     Due
     Paid
     Cancelled
+}
+
+enum AssetType {
+    VIDEO
+    BOOK
+    DOCUMENT
 }

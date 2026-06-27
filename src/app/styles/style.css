@@ -5522,6 +5522,251 @@ Profile Authentication Area CSS
 	color: #ffffff;
 }
 
+.auth-entry-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 30px;
+}
+.auth-entry-card {
+	position: relative;
+	overflow: hidden;
+	padding: 35px;
+	border-radius: 12px;
+	background-color: #ffffff;
+	box-shadow: 0 0 30px rgba(51, 51, 51, 0.08);
+	transition: 0.5s;
+}
+.auth-entry-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background-color: #1cab94;
+}
+.auth-entry-card.teacher::before {
+	background-color: #ffb607;
+}
+.auth-entry-card.admin::before {
+	background-color: #221638;
+}
+.auth-entry-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 20px 45px rgba(51, 51, 51, 0.12);
+}
+.auth-entry-icon {
+	width: 70px;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	margin-bottom: 25px;
+	background-color: rgba(28, 171, 148, 0.1);
+	color: #1cab94;
+	font-size: 34px;
+}
+.auth-entry-card.teacher .auth-entry-icon {
+	background-color: rgba(255, 182, 7, 0.12);
+	color: #ffb607;
+}
+.auth-entry-card.admin .auth-entry-icon {
+	background-color: rgba(34, 22, 56, 0.08);
+	color: #221638;
+}
+.auth-entry-card h3 {
+	margin-bottom: 12px;
+	font-size: 24px;
+}
+.auth-entry-card p {
+	margin-bottom: 25px;
+}
+.auth-entry-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 14px;
+}
+.auth-secondary-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	color: #1cab94;
+	font-weight: 700;
+}
+.auth-secondary-link:hover {
+	color: #221638;
+}
+.role-auth-area {
+	background: linear-gradient(135deg, #f8fffd 0%, #ffffff 45%, #f7f5ff 100%);
+}
+.role-auth-topbar {
+	margin-bottom: 25px;
+}
+.role-auth-intro {
+	padding-right: 25px;
+}
+.role-auth-intro span {
+	display: inline-block;
+	margin-bottom: 14px;
+	padding: 8px 14px;
+	border-radius: 30px;
+	color: #1cab94;
+	background-color: rgba(28, 171, 148, 0.1);
+	font-weight: 700;
+}
+.role-auth-teacher .role-auth-intro span {
+	color: #c58600;
+	background-color: rgba(255, 182, 7, 0.14);
+}
+.role-auth-admin .role-auth-intro span {
+	color: #221638;
+	background-color: rgba(34, 22, 56, 0.08);
+}
+.role-auth-intro h1 {
+	margin-bottom: 18px;
+	font-size: 42px;
+	line-height: 1.2;
+}
+.role-auth-intro p {
+	font-size: 17px;
+	margin-bottom: 25px;
+}
+.role-auth-intro ul {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style-type: none;
+}
+.role-auth-intro li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+	color: #221638;
+	font-weight: 700;
+}
+.role-auth-intro li i {
+	width: 26px;
+	height: 26px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	color: #ffffff;
+	background-color: #1cab94;
+}
+.role-auth-forms {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 30px;
+	align-items: flex-start;
+}
+.role-auth-forms.single-form {
+	grid-template-columns: minmax(0, 1fr);
+	max-width: 520px;
+	margin-left: auto;
+}
+.role-auth-forms .login-form {
+	margin-right: 0;
+}
+.role-auth-forms .register-form {
+	padding: 40px 50px;
+	border-radius: 5px;
+	background-color: #ffffff;
+	box-shadow: 0 0 10px rgba(51, 51, 51, 0.1);
+}
+.role-auth-forms .register-form h2,
+.role-auth-forms .login-form h2 {
+	font-size: 30px;
+}
+.auth-form-intro {
+	margin-top: -12px;
+	margin-bottom: 22px;
+	color: #606060;
+}
+.auth-switch-text {
+	margin-top: 18px;
+	margin-bottom: 0;
+	text-align: center;
+}
+.auth-switch-text a {
+	color: #1cab94;
+	font-weight: 700;
+}
+.admin-no-registration {
+	padding: 30px;
+	border-radius: 10px;
+	border: 1px solid rgba(34, 22, 56, 0.08);
+	background-color: #ffffff;
+}
+.admin-no-registration h3 {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+.admin-no-registration a {
+	color: #1cab94;
+	font-weight: 700;
+}
+.auth-nav-actions {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+.auth-nav-mini {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	white-space: nowrap;
+	font-weight: 700;
+}
+.auth-nav-mini a {
+	color: #221638;
+	font-size: 14px;
+}
+.auth-nav-mini a:hover {
+	color: #1cab94;
+}
+.banner-auth-actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+@media only screen and (max-width: 1199px) {
+	.auth-nav-actions {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+	}
+}
+@media only screen and (max-width: 991px) {
+	.auth-entry-grid,
+	.role-auth-forms {
+		grid-template-columns: 1fr;
+	}
+	.role-auth-intro {
+		padding-right: 0;
+		margin-bottom: 35px;
+	}
+	.role-auth-forms.single-form {
+		margin-left: 0;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.auth-entry-card,
+	.role-auth-forms .register-form,
+	.role-auth-forms .login-form {
+		padding: 30px 25px;
+	}
+	.role-auth-intro h1 {
+		font-size: 30px;
+	}
+	.auth-nav-actions {
+		margin-top: 12px;
+	}
+}
+
 /*================================================
 Contact Area CSS
 =================================================*/
@@ -6086,4 +6331,213 @@ Go Top CSS
 .language-switcher button.active {
 	background-color: #1cab94;
 	color: white;
+}
+
+/* ==========================================================================
+   Indian Government Portal Theme Style Overrides
+   ========================================================================== */
+
+/* 1. Global styling overrides */
+body {
+	background-color: #f8f9fa !important;
+	color: #333333 !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	color: #0f2c59 !important;
+	font-weight: 700 !important;
+}
+
+/* Hide all floating bubble shape elements */
+.shape1, .shape2, .shape3, .shape4, .shape5, .shape6, .shape7, .shape8, .shape9, .shape10, .shape11, .shape12, .shape13, .banner-shape1, .banner-shape2, .banner-shape3 {
+	display: none !important;
+}
+
+/* Remove swirly animations and standard decorative elements */
+.lines {
+	display: none !important;
+}
+
+/* 2. Top Government Bar & Tricolor Accent */
+.gov-top-bar {
+	background-color: #0a1c33;
+	color: #ffffff;
+	font-size: 13px;
+	padding: 8px 0;
+	border-bottom: 3px solid #ff9933; /* Saffron bottom border */
+	font-family: inherit;
+}
+.gov-top-bar a {
+	color: #dddddd;
+	text-decoration: none;
+	font-size: 12px;
+	margin-left: 10px;
+}
+.gov-top-bar a:hover {
+	color: #ffffff;
+}
+.gov-top-bar .gov-flag {
+	display: inline-block;
+	width: 16px;
+	height: 11px;
+	background: linear-gradient(to bottom, #ff9933 33.3%, #ffffff 33.3%, #ffffff 66.6%, #138808 66.6%);
+	margin-right: 8px;
+	vertical-align: middle;
+	border: 1px solid #cccccc;
+}
+
+.tricolor-strip {
+	height: 4px;
+	width: 100%;
+	display: flex;
+}
+.tricolor-saffron {
+	flex: 1;
+	background-color: #ff9933;
+}
+.tricolor-white {
+	flex: 1;
+	background-color: #ffffff;
+}
+.tricolor-green {
+	flex: 1;
+	background-color: #138808;
+}
+
+/* 3. Header & Navigation Updates */
+.navbar-area {
+	border-bottom: 2px solid #0f2c59;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+	background-color: #ffffff;
+}
+.edemy-nav .navbar .navbar-nav .nav-item a {
+	color: #0f2c59 !important;
+	font-weight: 600;
+}
+.edemy-nav .navbar .navbar-nav .nav-item a:hover,
+.edemy-nav .navbar .navbar-nav .nav-item a.active {
+	color: #ff9933 !important;
+	border-bottom: 2px solid #ff9933;
+}
+
+/* 4. Button Redesign (Flat & Formal) */
+.default-btn, .default-btn-style-3 {
+	background-color: #0f2c59 !important;
+	color: #ffffff !important;
+	border-radius: 2px !important;
+	border: 1px solid #0f2c59 !important;
+	font-weight: 600 !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.5px !important;
+	padding: 10px 24px !important;
+	transition: all 0.3s ease-in-out !important;
+	overflow: hidden;
+}
+.default-btn span, .default-btn-style-3 span {
+	display: none !important; /* Hide bubble span animation */
+}
+.default-btn:hover, .default-btn-style-3:hover {
+	background-color: #ff9933 !important;
+	border-color: #ff9933 !important;
+	color: #ffffff !important;
+}
+.default-btn i, .default-btn-style-3 i {
+	position: static !important;
+	margin-right: 8px !important;
+	font-size: 16px !important;
+	vertical-align: middle !important;
+}
+
+/* 5. Main Hero/Banner Design */
+.main-banner {
+	background-color: #ffffff !important;
+	background-image: linear-gradient(180deg, #f4f7fa 0%, #ffffff 100%) !important;
+	padding-top: 80px !important;
+	padding-bottom: 80px !important;
+	border-bottom: 1px solid #dee2e6;
+}
+.main-banner-content h1 {
+	font-size: 42px !important;
+	color: #0f2c59 !important;
+	line-height: 1.2 !important;
+	margin-bottom: 20px !important;
+}
+.main-banner-content p {
+	color: #4a5568 !important;
+	font-size: 18px !important;
+	line-height: 1.6 !important;
+}
+
+/* 6. Section & Area Design */
+.about-area, .features-area, .funfacts-and-feedback-area, .premium-access-area, .subscribe-area {
+	background-color: #ffffff !important;
+	border-bottom: 1px solid #e2e8f0;
+}
+.about-area.bg-fef8ef {
+	background-color: #f8f9fa !important;
+}
+.section-title h2 {
+	color: #0f2c59 !important;
+	font-size: 32px !important;
+}
+.section-title .sub-title {
+	color: #ff9933 !important;
+	font-weight: 700 !important;
+	letter-spacing: 1px;
+}
+
+/* 7. Card & Single Box Styling */
+.single-features-box, .single-feedback-item, .single-funfacts-box {
+	background-color: #ffffff !important;
+	border: 1px solid #e2e8f0 !important;
+	border-radius: 4px !important;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+	padding: 30px 24px !important;
+	transition: transform 0.2s ease-in-out !important;
+}
+.single-features-box:hover {
+	transform: translateY(-2px) !important;
+	border-color: #ff9933 !important;
+}
+.single-features-box .icon i {
+	color: #0f2c59 !important;
+	background-color: #f0f4f8 !important;
+	border-radius: 50% !important;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	display: inline-block;
+	text-align: center;
+}
+
+/* 8. Footer Area Styling */
+.footer-area {
+	background-color: #0a1c33 !important;
+	color: #cbd5e0 !important;
+}
+.footer-area .single-footer-widget h3 {
+	color: #ffffff !important;
+	border-bottom: 2px solid #ff9933;
+	padding-bottom: 8px;
+	margin-bottom: 20px;
+}
+.footer-area .single-footer-widget p {
+	color: #a0aec0 !important;
+}
+.footer-area .footer-links-list li a,
+.footer-area .footer-contact-info li a {
+	color: #cbd5e0 !important;
+}
+.footer-area .footer-links-list li a:hover {
+	color: #ff9933 !important;
+}
+.footer-bottom-area {
+	border-top: 1px solid #1a365d !important;
+	padding-top: 20px !important;
+	margin-top: 40px !important;
+}
+
+/* 9. Language switcher button active style override */
+.language-switcher button.active {
+	background-color: #ff9933 !important;
 }

@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import ProfileDropdown from "./ProfileDropdown";
-// import Cart from "./Cart";
 import SearchForm from "./SearchForm";
-import Cart from "./Cart";
 
 const Navbar = ({
 	currentUser,
@@ -18,10 +16,6 @@ const Navbar = ({
 		about,
 		contact,
 		searchCourses,
-		empty,
-		total,
-		gotocheckout,
-		loginRegister,
 	},
 }) => {
 	const [menu, setMenu] = React.useState(true);
@@ -50,6 +44,47 @@ const Navbar = ({
 
 	return (
 		<>
+			<div className="gov-top-bar">
+				<div className="container-fluid">
+					<div className="d-flex justify-content-between align-items-center flex-wrap">
+						<div className="d-flex align-items-center flex-wrap">
+							<span className="gov-flag"></span>
+							{lang === "hi" ? (
+								<>
+									<span className="fw-bold me-2" style={{ color: "#ff9933" }}>सत्यमेव जयते</span>
+									<span className="mx-2" style={{ color: "#666" }}>|</span>
+									<span className="me-2">भारत सरकार</span>
+									<span className="mx-2" style={{ color: "#666" }}>|</span>
+									<span>Government of India</span>
+								</>
+							) : (
+								<>
+									<span className="fw-bold me-2" style={{ color: "#ff9933" }}>Satyamev Jayate</span>
+									<span className="mx-2" style={{ color: "#666" }}>|</span>
+									<span>Government of India</span>
+								</>
+							)}
+						</div>
+						<div className="d-none d-md-block">
+							{lang === "hi" ? (
+								<>
+									<span>शिक्षा मंत्रालय</span>
+									<span className="mx-2" style={{ color: "#666" }}>|</span>
+									<span>Ministry of Education</span>
+								</>
+							) : (
+								<span>Ministry of Education</span>
+							)}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="tricolor-strip">
+				<div className="tricolor-saffron"></div>
+				<div className="tricolor-white"></div>
+				<div className="tricolor-green"></div>
+			</div>
+
 			<div id="navbar" className="navbar-area">
 				<div className="edemy-nav">
 					<div className="container-fluid">
@@ -83,77 +118,43 @@ const Navbar = ({
 								/>
 
 								<ul className="navbar-nav">
-									<motion.li
-										className="nav-item"
-										whileHover={{
-											scale: 1.1,
-											transition: { duration: 0.5 },
-										}}
-										whileTap={{ scale: 0.9 }}
-									>
+									<li className="nav-item">
 										<Link
 											href={`/${lang}`}
 											className="nav-link"
 										>
 											{home}
 										</Link>
-									</motion.li>
+									</li>
 
-									<motion.li
-										className="nav-item"
-										whileHover={{
-											scale: 1.1,
-											transition: { duration: 0.5 },
-										}}
-										whileTap={{ scale: 0.9 }}
-									>
+									<li className="nav-item">
 										<Link
 											href={`/${lang}/courses`}
 											className="nav-link"
 										>
 											{courses}
 										</Link>
-									</motion.li>
-									<motion.li
-										className="nav-item"
-										whileHover={{
-											scale: 1.1,
-											transition: { duration: 0.5 },
-										}}
-										whileTap={{ scale: 0.9 }}
-									>
+									</li>
+									<li className="nav-item">
 										<Link
 											href={`/${lang}/about`}
 											className="nav-link"
 										>
 											{about}
 										</Link>
-									</motion.li>
-									<motion.li
-										className="nav-item"
-										whileHover={{
-											scale: 1.1,
-											transition: { duration: 0.5 },
-										}}
-										whileTap={{ scale: 0.9 }}
-									>
+									</li>
+									<li className="nav-item">
 										<Link
 											href={`/${lang}/contact`}
 											className="nav-link"
 										>
 											{contact}
 										</Link>
-									</motion.li>
+									</li>
 								</ul>
 							</div>
 
 							<div className="others-option d-flex align-items-center">
-								<Cart
-									lang={lang}
-									empty={empty}
-									total={total}
-									gotocheckout={gotocheckout}
-								/>
 
 								<div className="option-item">
 									{currentUser ? (
@@ -162,13 +163,29 @@ const Navbar = ({
 											lang={lang}
 										/>
 									) : (
-										<Link
-											href={`/${lang}/auth`}
-											className="default-btn"
-										>
-											<i className="flaticon-user"></i>{" "}
-											{loginRegister} <span></span>
-										</Link>
+										<div className="auth-nav-actions">
+											<Link
+												href={`/${lang}/auth/student`}
+												className="default-btn"
+											>
+												<i className="flaticon-user"></i>{" "}
+												Student Login <span></span>
+											</Link>
+
+											<div className="auth-nav-mini">
+												<Link
+													href={`/${lang}/auth/teacher`}
+												>
+													Teacher
+												</Link>
+												<span>/</span>
+												<Link
+													href={`/${lang}/auth/admin`}
+												>
+													Admin
+												</Link>
+											</div>
+										</div>
 									)}
 								</div>
 							</div>

@@ -48,7 +48,7 @@ const PageNavigation = ({ courseId, title, lang }) => {
 
 				<li>
 					<Link
-						href={`/instructor/course/${courseId}/videos`}
+						href={`/${lang}/instructor/course/${courseId}/videos`}
 						className={
 							pathname ==
 							`/${lang}/instructor/course/${courseId}/videos`
@@ -61,7 +61,7 @@ const PageNavigation = ({ courseId, title, lang }) => {
 				</li>
 				<li>
 					<Link
-						href={`/instructor/course/${courseId}/assets`}
+						href={`/${lang}/instructor/course/${courseId}/assets`}
 						className={
 							pathname ==
 							`/${lang}/instructor/course/${courseId}/assets`

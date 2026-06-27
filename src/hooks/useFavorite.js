@@ -1,10 +1,12 @@
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
 import { toast } from "react-hot-toast";
 
 const useFavourite = ({ courseId, currentUser }) => {
 	const router = useRouter();
+	const params = useParams();
+	const lang = params?.lang || "en";
 
 	const hasFauvorited = useMemo(() => {
 		const list = currentUser?.favourites || [];
@@ -17,7 +19,7 @@ const useFavourite = ({ courseId, currentUser }) => {
 			e.stopPropagation();
 			if (!currentUser) {
 				toast.error("Need to login first!");
-				router.push("/auth");
+				router.push(`/${lang}/auth/student`);
 				return;
 			}
 
@@ -36,7 +38,7 @@ const useFavourite = ({ courseId, currentUser }) => {
 				toast.error("Something went wrong");
 			}
 		},
-		[currentUser, hasFauvorited, courseId, router]
+		[currentUser, hasFauvorited, courseId, router, lang]
 	);
 
 	return {

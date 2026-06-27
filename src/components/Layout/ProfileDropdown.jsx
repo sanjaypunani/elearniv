@@ -107,8 +107,8 @@ const ProfileDropdown = ({ currentUser, lang }) => {
 							href={`/${lang}/learning/my-purchase-history/`}
 							className="dropdown-item"
 						>
-							<i className="bx bx-credit-card-front"></i>
-							My Purchases
+							<i className="bx bx-book-bookmark"></i>
+							My Enrolments
 						</Link>
 					</li>
 

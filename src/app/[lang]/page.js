@@ -1,6 +1,5 @@
 import { getPartners } from "@/actions/admin/getPartners";
 import { getTestimonials } from "@/actions/admin/getTestimonials";
-import { getBannerCourses, getHomepageCourses } from "@/actions/getCourses";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import SubscribeForm from "@/components/Shared/SubscribeForm";
 import AboutUs from "@/components/eLearningSchool/AboutUs";
@@ -8,48 +7,35 @@ import AffordableCertification from "@/components/eLearningSchool/AffordableCert
 import Banner from "@/components/eLearningSchool/Banner";
 import Features from "@/components/eLearningSchool/Features";
 import FeedbackSliderWithFunFacts from "@/components/eLearningSchool/FeedbackSliderWithFunFacts";
-import GetInstantCourses from "@/components/eLearningSchool/GetInstantCourses";
 import Partner from "@/components/eLearningSchool/Partner";
-import PopularCourses from "@/components/eLearningSchool/PopularCourses";
-import ViewAllCourses from "@/components/eLearningSchool/ViewAllCourses";
+import NoticeBoard from "@/components/eLearningSchool/NoticeBoard";
+import LeadershipPanel from "@/components/eLearningSchool/LeadershipPanel";
+import GovtInitiatives from "@/components/eLearningSchool/GovtInitiatives";
 import { getDictionary } from "./dictionaries";
 
 export const metadata = {
-	title: "Home | Eduup - React Next.js Learning Management System",
+	title: "Home | Eduup - Government eLearning Portal",
 };
 
 export default async function Page({ params }) {
 	const { lang } = await params;
 	const dict = await getDictionary(lang);
-	const { courses } = await getBannerCourses();
-	const { home_courses } = await getHomepageCourses();
 	const currentUser = await getCurrentUser();
 	const { partners } = await getPartners();
 	const { testimonials } = await getTestimonials();
-	// console.log(courses);
 	return (
 		<>
 			<Banner
 				currentUser={currentUser}
-				courses={courses}
 				{...dict}
 				lang={lang}
 			/>
+			<NoticeBoard lang={lang} />
+			<LeadershipPanel lang={lang} />
+			<GovtInitiatives lang={lang} />
 			<Features {...dict} />
 			<AboutUs lang={lang} {...dict} />
-			<PopularCourses
-				currentUser={currentUser}
-				courses={home_courses}
-				lang={lang}
-				{...dict}
-			/>
 			<FeedbackSliderWithFunFacts testimonials={testimonials} {...dict} />
-			<GetInstantCourses
-				currentUser={currentUser}
-				lang={lang}
-				{...dict}
-			/>
-			<ViewAllCourses lang={lang} {...dict} />
 			<Partner partners={partners} />
 			<AffordableCertification {...dict} />
 			<SubscribeForm {...dict} />

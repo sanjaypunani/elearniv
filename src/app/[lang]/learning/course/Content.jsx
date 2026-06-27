@@ -30,7 +30,7 @@ const Content = ({ id, overview, reviews }) => {
 						}}
 						className={tab == "asset" ? "active" : ""}
 					>
-						Assets
+						Materials
 					</div>
 				</li>
 				<li>

@@ -3,18 +3,18 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import Input from "../FormHelpers/Input";
 
 const ConfirmEmail = () => {
 	const router = useRouter();
+	const params = useParams();
+	const lang = params?.lang || "en";
 
 	const {
 		register,
 		handleSubmit,
-		setError,
-		reset,
 		formState: { errors, isValid, isLoading },
 	} = useForm({
 		defaultValues: {
@@ -37,7 +37,7 @@ const ConfirmEmail = () => {
 					secondary: "#FFFAEE",
 				},
 			});
-			router.push("/auth");
+			router.push(`/${lang}/auth/student`);
 		} catch (err) {
 			let {
 				response: {

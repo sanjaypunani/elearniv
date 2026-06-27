@@ -2,15 +2,16 @@ import { myLearning } from "@/actions/myLearning";
 import PageBanner from "@/components/Shared/PageBanner";
 import Content from "./Content";
 
-const page = async ({ params: { lang } }) => {
+const page = async ({ params }) => {
+	const { lang } = await params;
 	const { enrolments } = await myLearning();
 	return (
 		<>
 			<PageBanner
-				pageTitle="My Purchases"
+				pageTitle="My Enrolments"
 				homePageUrl="/"
 				homePageText="Home"
-				activePageText="My Purchases"
+				activePageText="My Enrolments"
 				lang={lang}
 			/>
 
@@ -20,3 +21,4 @@ const page = async ({ params: { lang } }) => {
 };
 
 export default page;
+

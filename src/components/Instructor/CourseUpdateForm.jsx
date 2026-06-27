@@ -7,7 +7,6 @@ import axios from "axios";
 import { useForm, Controller } from "react-hook-form";
 import Input from "../FormHelpers/Input";
 import CategorySelect from "../FormHelpers/CategorySelect";
-import SetPrice from "../FormHelpers/SetPrice";
 import ImageUpload from "../FormHelpers/ImageUpload";
 import AccessTime from "../FormHelpers/AccessTime";
 import TiptapEditor from "../FormHelpers/ClientOnlyRichTextEditor";
@@ -29,8 +28,8 @@ const CourseUpdateForm = ({ course }) => {
 			category: "",
 			title: "",
 			overview: "",
-			regular_price: "",
-			before_price: "",
+			regular_price: "0",
+			before_price: "0",
 			lessons: "",
 			duration: "",
 			image: "",
@@ -133,35 +132,6 @@ const CourseUpdateForm = ({ course }) => {
 					/>
 				</div>
 
-				<div className="col-md-6">
-					<SetPrice
-						label="Regular Price"
-						id="regular_price"
-						required
-						disabled={isLoading}
-						register={register}
-						errors={errors}
-						value={regular_price}
-						onChange={(newValue) =>
-							setValue("regular_price", newValue)
-						}
-					/>
-				</div>
-
-				<div className="col-md-6">
-					<SetPrice
-						label="Before Price"
-						id="before_price"
-						required
-						disabled={isLoading}
-						register={register}
-						errors={errors}
-						value={before_price}
-						onChange={(newValue) =>
-							setValue("before_price", newValue)
-						}
-					/>
-				</div>
 
 				<div className="col-md-6">
 					<AccessTime

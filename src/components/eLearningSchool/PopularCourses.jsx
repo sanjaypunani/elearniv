@@ -39,7 +39,7 @@ const PopularCourses = ({
 								<p>
 									{info}{" "}
 									{!currentUser && (
-										<Link href={`/${lang}/auth`}>
+										<Link href={`/${lang}/auth/student`}>
 											{registerForFree}
 										</Link>
 									)}

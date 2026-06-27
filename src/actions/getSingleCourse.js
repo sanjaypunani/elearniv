@@ -13,6 +13,7 @@ export async function getSingleCourse(params) {
 					},
 				},
 				videos: true,
+				assets: true,
 				category: true,
 				enrolments: {
 					select: {

@@ -3,6 +3,7 @@ import { getSingleCourse } from "@/actions/getSingleCourse";
 import PageBanner from "@/components/Shared/PageBanner";
 import CoursesDetailsContent from "@/components/SingleCourses/CoursesDetailsContent";
 import { stripHtmlAndTruncate } from "@/utils/stripHtmlAndTruncate";
+import prisma from "@/libs/prismadb";
 
 export async function generateMetadata({ params }) {
 	const { course } = await getSingleCourse(params);
@@ -20,7 +21,18 @@ const page = async ({ params }) => {
 	const { course } = await getSingleCourse(params);
 	const currentUser = await getCurrentUser();
 
-	// console.log(course);
+	// Check if the current user is already enrolled in this course
+	let isEnrolled = false;
+	if (currentUser && course) {
+		const enrolment = await prisma.enrolment.findFirst({
+			where: {
+				userId: currentUser.id,
+				courseId: course.id,
+			},
+		});
+		isEnrolled = !!enrolment;
+	}
+
 	return (
 		<>
 			<PageBanner
@@ -35,6 +47,7 @@ const page = async ({ params }) => {
 				currentUser={currentUser}
 				course={course}
 				lang={lang}
+				isEnrolled={isEnrolled}
 			/>
 		</>
 	);
