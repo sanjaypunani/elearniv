@@ -139,7 +139,7 @@ const ProfileDropdown = ({ currentUser, lang }) => {
 					<li>
 						<button
 							type="submit"
-							onClick={() => signOut()}
+							onClick={() => signOut({ callbackUrl: "/" })}
 							className="dropdown-item"
 						>
 							<i className="bx bx-log-out"></i> Log out

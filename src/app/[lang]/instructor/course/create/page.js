@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import CourseCreateForm from "@/components/Instructor/CourseCreateForm";
 import { getCurrentUser } from "@/actions/getCurrentUser";
-import { redirect } from "next/dist/server/api-utils";
+import { redirect } from "next/navigation";
 
 const Page = async ({ params }) => {
 	const { lang } = await params;

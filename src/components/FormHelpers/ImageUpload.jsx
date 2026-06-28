@@ -5,7 +5,7 @@ import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
 import Link from "next/link";
 
-const uploadPreset = process.env.NEXT_CLOUDINARY_PRESET;
+const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_PRESET;
 
 const ImageUpload = ({ onChange, value, label = "Course Image 750x500px" }) => {
 	const handleUpload = useCallback(

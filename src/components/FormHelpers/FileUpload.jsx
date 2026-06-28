@@ -4,7 +4,7 @@ import React, { useCallback } from "react";
 import { CldUploadWidget } from "next-cloudinary";
 import Link from "next/link";
 
-const uploadPreset = process.env.NEXT_CLOUDINARY_PRESET;
+const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_PRESET;
 
 const FileUpload = ({ onChange, value, label = "Upload File" }) => {
 	const handleUpload = useCallback(
